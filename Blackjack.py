@@ -19,6 +19,9 @@ def inventaario():
 def blackjack1(): 
     global kortit,eirahaa,onpummi,deal6,uudelleen,dealer,deal5,pelaaja,ace1,ace2 ,ace3,ace4,teko,määrä,panos,sentit,raha
     ace1=0 
+    if sentit >=100:
+        raha+=sentit*100//100
+        sentit-=100
     pelaajavoitti=0
     uudelleen=0
     panos=0
@@ -81,6 +84,10 @@ def blackjack1():
     deal3=random.choice(kortit) 
     deal4=random.choice(kortit) 
     cards=[deal,deal2] 
+    deal=int(deal)
+    deal2=int(deal2)
+    deal3=int(deal3)
+    deal4=int(deal4)
 
     
     if 1 in cards:
@@ -135,6 +142,13 @@ def blackjack1():
     
     
     if dealer == 21:
+        print("paljastetaan kortteja...")
+        print()
+        print("-----------------------------")
+        print(f"Dealerillä on {dealer}")
+        print(f"Sinulla on {pelaaja}")
+        print("-----------------------------")
+        print()
         print("Dealer sai blackjackin, hävisit")
         while True:
             teko=input("Pelaatko uudelleen: ")
@@ -276,6 +290,7 @@ def blackjack1():
                             print("et voi tehdä tuota nyt")
             elif pelaaja == dealer:
                 print("push, eli kukaan ei menetä mitään")
+                panos=panos*2
                 raha += panos//100
                 sentit += panos%100
                 print(f"Sinulla on nyt {raha} euroa ja {sentit} senttiä")
@@ -321,6 +336,13 @@ def blackjack1():
                 teko=input("standäätkö, hittaatko vai doublaatko")
                 
                 if teko.lower() in ["stand" , "ständään","jään","en tee mitään", "ei mitään","standaan","standään"]:
+                    print("paljastetaan kortteja...")
+                    print()
+                    print("-----------------------------")
+                    print(f"Dealerillä on {dealer}")
+                    print(f"Sinulla on {pelaaja}")
+                    print("-----------------------------")
+                    print()
                     while dealer<16:
                         deal5=0
                         if deal=="ässä" or deal2=="ässän":
@@ -408,6 +430,7 @@ def blackjack1():
                                     print("et voi tehdä tuota nyt")
                     elif pelaaja == dealer:
                         print("push, eli kukaan ei menetä mitään")
+                        panos=panos*2
                         raha += panos//100
                         sentit += panos%100
                         print(f"Sinulla on nyt {raha} euroa ja {sentit} senttiä")
@@ -556,6 +579,7 @@ def blackjack1():
                                     print("et voi tehdä tuota nyt")
                     elif pelaaja == dealer:
                         print("push, eli kukaan ei menetä mitään")
+                        panos*=2
                         raha += panos//100
                         sentit += panos%100
                         print(f"Sinulla on nyt {raha} euroa ja {sentit} senttiä")
@@ -673,6 +697,7 @@ def blackjack1():
                             print("et voi tehdä tuota nyt")
             elif pelaaja == dealer:
                 print("push, eli kukaan ei menetä mitään")
+                panos*=2
                 raha += panos//100
                 sentit += panos%100
                 print(f"Sinulla on nyt {raha} euroa ja {sentit} senttiä")
@@ -828,6 +853,7 @@ def blackjack1():
                             print("et voi tehdä tuota nyt")
             elif pelaaja == dealer:
                 print("push, eli kukaan ei menetä mitään")
+                panos*=2
                 raha += panos//100
                 sentit += panos%100
                 print(f"Sinulla on nyt {raha} euroa ja {sentit} senttiä")
