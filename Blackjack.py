@@ -139,6 +139,23 @@ def blackjack1():
     print(f"Dealerin kortti on {deal}")
     print(f"Sinulla on {pelaaja}")
     print("-----------------------------")
+
+    if dealer==21 and pelaaja==21:
+        print("push, eli molemmilla oli samamäärä, saat rahasi takaisin")
+        raha+=panos//100
+        sentit+=panos%100
+        while True:
+            teko=input("Pelaatko uudelleen: ")
+            if teko.lower() in ["kyllä","joo","pelaan"]:
+                uudelleen=1
+                return
+            elif teko.lower() == "en" or teko.lower() == "poistu" or teko.lower() == "sulje":
+                print("poistutaan...")
+                return
+            elif teko.lower() == "inventaario":
+                inventaario()
+            else:
+                print("et voi tehdä tuota nyt")
     
     
     if dealer == 21:
