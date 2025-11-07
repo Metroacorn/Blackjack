@@ -132,14 +132,18 @@ def blackjack1():
         pelaaja=deal3+deal4
     if deal==1:
         deal="ässä"
-    
+    if deal3 == 1:
+        deal3="ässä"
+    if deal4==1:
+        deal4 = "ässä"
     print("paljastetaan kortteja...")
     print()
     print("-----------------------------")
     print(f"Dealerin kortti on {deal}")
-    print(f"Sinulla on {pelaaja}")
+    print(f"sinulla on {deal3} ja {deal4}")
     print("-----------------------------")
-
+    
+    
     if dealer==21 and pelaaja==21:
         print("push, eli molemmilla oli samamäärä, saat rahasi takaisin")
         raha+=panos//100
@@ -157,13 +161,12 @@ def blackjack1():
             else:
                 print("et voi tehdä tuota nyt")
     
-    
     if dealer == 21:
         print("paljastetaan kortteja...")
         print()
         print("-----------------------------")
         print(f"Dealerillä on {dealer}")
-        print(f"Sinulla on {pelaaja}")
+        print(f"Sinulla on {deal3} ja {deal4}")
         print("-----------------------------")
         print()
         print("Dealer sai blackjackin, hävisit")
@@ -216,7 +219,7 @@ def blackjack1():
             print()
             print("-----------------------------")
             print(f"Dealerillä on {dealer}")
-            print(f"Sinulla on {pelaaja}")
+            print(f"sinulla on {deal3} ja {deal4}")
             print("-----------------------------")
             print()
             
@@ -346,7 +349,7 @@ def blackjack1():
                 print()
                 print("-----------------------------")
                 print(f"Dealerin kortti on {deal}")
-                print(f"Sinulla on {pelaaja}")
+                print(f"sinulla on {pelaaja}")
                 print("-----------------------------")
                 print()
                 
@@ -357,7 +360,7 @@ def blackjack1():
                     print()
                     print("-----------------------------")
                     print(f"Dealerillä on {dealer}")
-                    print(f"Sinulla on {pelaaja}")
+                    print(f"sinulla on {pelaaja}")
                     print("-----------------------------")
                     print()
                     while dealer<16:
